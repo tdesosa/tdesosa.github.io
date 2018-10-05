@@ -1,0 +1,140 @@
+body {
+    text-align: center;
+    background-color: lightslategrey;
+    font-family: 'Permanent Marker', cursive;
+    /* background-image: url('../images/hubbleUniverse.png'); */
+    /* background-size: cover; */
+    
+}
+
+.navbar {
+    margin: 25px;
+}
+
+.navbar-logo {
+    color: #007bff;
+    padding-right: 25px;
+    font-size: 3rem;
+}
+
+.startButton {
+    margin: 10px;
+}
+
+.reStartButton {
+    margin: 10px;
+}
+
+.howToPlayButton {
+    margin: 10px;
+}
+
+.beginLevelTwoButton {
+    margin: 10px;
+}
+
+.metrics {
+    margin-left: 40px,
+}
+
+.gamePlay {
+    padding-left: 18%;
+}
+
+.game-column {
+    display: inline-block;
+}
+
+.square {
+    height: 30px;
+    width: 30px;
+    background-color: skyblue;
+}
+
+.square2 {
+    height: 30px;
+    width: 30px;
+    background-color: black;
+}
+
+.square-1-1, .square-2-1, .square-3-1, .square-4-1, .square-5-1, .square-6-1, .square-7-1, .square-8-1, .square-9-1, .square-10-1, .square-11-1, .square-12-1, .square-13-1, .square-14-1, .square-15-1  {
+    background-image: url('../images/tree.png');
+}
+
+.square2-1-1, .square2-2-1, .square2-3-1, .square2-4-1, .square2-5-1, .square2-6-1, .square2-7-1, .square2-8-1, .square2-9-1, .square2-10-1, .square2-11-1, .square2-12-1, .square2-13-1, .square2-14-1, .square2-15-1  {
+    background-image: url('../images/waves.png');
+}
+
+.landingPad {
+    background-image: url('../images/target.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.landingPadTwo {
+    background-image: url('../images/target.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#lander {
+    background-image: url('../images/skydiver.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#landerTwo {
+    background-image: url('../images/skydiver.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.speedAssist {
+    background-image: url('../images/cloud.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.speedAssistTwo {
+    background-image: url('../images/cloud.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#timer {
+    color: orangered;
+    margin-top: 25px;
+    margin-left: 90px;
+    font-size: 25px;
+}
+
+#sun {
+    background-image: url('../images/sun.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#moon {
+    background-image: url('../images/moon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.modalGifs {
+    width: 275px;
+    height: 175px;
+}
+
+#swoosh {
+    color: white;
+    margin-top: 25px;
+    margin-left: 90px;
+    font-size: 25px;
+}
+
+.levelDisplay {
+    color: white;
+    margin-top: 25px;
+    margin-left: 90px;
+    font-size: 25px;
+}

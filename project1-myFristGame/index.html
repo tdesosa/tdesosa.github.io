@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Bootstrap Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrp Meta Tags -->
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lander Game</title>
+    
+    <!-- Normalize CSS Tag -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Normalize CSS Tag -->
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <!-- Boostrap CSS Tag -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Boostrap CSS Tag -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Bootstrap Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+            <div class="navbar-logo">PARACHUTE</div>    
+            <button type="button" class="btn btn-primary startButton">Start Game</button>
+            <button type="button" class="btn btn-primary restartButton">Restart Game</button>
+            <button type="button" class="btn btn-primary howToPlayButton">How To Play</button>
+    </nav>
+    <!-- Bootstrap Nav Bar -->
+
+    <!-- Bootstrap Metrics/GamePlay/Character Containers -->
+    <div class="container-fluid align-items-center">
+      <div class="row justify-content-center">
+        <div class="col metrics justify-content-center">
+          <div class="row levelDisplay">Level 1</div>
+          <div class="row timeDisplay" id="timer">Timer: 12s</div>
+          <div class="row swooshDisplay"></div>
+        </div>
+        <div class="col-10 gamePlay justify-content-center">
+        </div>
+        <!-- <div class="col justify-content-center">
+          Characters
+        </div> -->
+      </div>
+    </div>
+    <!-- Bootstrap Metrics/GamePlay/Character Containers -->
+
+    <!-- How To Play Modal -->
+    <div class="modal howToPlayModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">How To Play:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>The goal of PARACHUTE is to make it to the landing spot before the timer runs out.</p>
+                <p>Dropping DOWN THROUGH clouds will help you make it to the landing spot faster.</p>
+                <p>Click the "START BUTTON" to begin.</p>
+                <p>Good luck and enjoy!</p>
+
+                <img class='modalGifs' src='images/highFive.gif'>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- How To Play Modal -->
+
+    <!-- Missed Target Modal -->
+    <div class="modal missedTargetModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                <p>You Missed Your Target :(</p>
+                <p>Don't Give Up And Try Again!</p>
+
+                <img class='modalGifs' src='images/missedTarget.gif'>
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary missedTargetRestartBtn">Restart</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Missed Target Modal -->
+
+    <!-- Times Up Modal -->
+    <div class="modal timesUpModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                <p>Times Up :(</p>
+                <p>Try Again!</p>
+
+                <img class='modalGifs' src='images/timesUp.gif'>
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary timesUpRestartBtn">Restart</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Times Up Modal -->
+
+    <!-- Safe Landing Modal -->
+    <div class="modal safeLandingModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                <p>You Made It To Your Landing Target!</p>
+                <p>Way To Go!</p>
+
+                <img class='modalGifs' src='images/safeLanding.gif'>
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary levelTwoBtn" data-dismiss="modal">Move On To Level 2</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Safe Landing Modal -->
+
+    <!-- Final Modal -->
+    <div class="modal finalModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                <p>You Made It To Your Landing Target Again!</p>
+                <p>Way To Go!</p>
+
+                <img class='modalGifs' src='images/elephantsDiving.gif'>
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary finalRestartModal" data-dismiss="modal">End Game</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Final Modal -->
+
+    <!-- Swoosh Audo For Dropping Through Clouds -->
+    <audio id="swooshSound" autoplay>
+      <source src="sounds/swooshSound.wav">
+    </audio>
+    <!-- Swoosh Audo For Dropping Through Clouds -->
+
+    <!-- jQeury Script Tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <!-- jQuery Script Tag -->
+  
+      <!-- Velocity Script Tag -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.js"></script>
+      <!-- Velocity Script Tag -->
+    
+      <!-- Bootstrap JS Tag -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <!-- Bootstrap JS Tag -->
+
+    
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
